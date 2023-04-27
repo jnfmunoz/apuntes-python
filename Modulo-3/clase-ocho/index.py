@@ -9,6 +9,7 @@ print(gato.type)
 gato.type = "Grandanes"
 print(gato.type)
 
+print("\n ******************************** \n")
 
 class Droid: 
     def __init__(self, name):
@@ -27,6 +28,8 @@ android = Droid("arthur")
 print(android.name)
 android.name = "Critripo"
 print(android.name)
+
+print("\n ******************************** \n")
 
 android.hidden_name = "Rojo"
 print(android.hidden_name)
