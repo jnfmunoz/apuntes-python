@@ -36,7 +36,7 @@ class Movimientos(Cuenta):
         return self.__saldo
     
     @n_movimiento.setter
-    def n_movimiento(self, _n_movimiento:str):
+    def n_movimiento(self, _n_movimiento:str) -> None:
         self._n_movimiento
     
     @tipo_movimiento.setter
@@ -54,10 +54,3 @@ class Movimientos(Cuenta):
     @saldo.setter
     def saldo(self, _saldo:str) -> None:
         self._saldo
-
-        
-    
-
-
-    
-    
