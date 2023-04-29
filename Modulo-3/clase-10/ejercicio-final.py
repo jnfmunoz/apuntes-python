@@ -43,13 +43,15 @@ class Cuenta:
         self.__tipo_cuenta = tipo_cuenta
 
     #metodo para abonar saldo a la cuenta bancaria
-    @staticmethod
+    # @staticmethod
+    @classmethod
     def abono_saldo(monto):
         saldo =+ monto
         return saldo
     
     #metodo para realizar cargo a la cuenta bancaria
-    @staticmethod
+    #@staticmethod
+    @classmethod
     def cargo_saldo(monto):
         saldo =- monto
         return saldo
