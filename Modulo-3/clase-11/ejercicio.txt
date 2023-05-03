@@ -1,0 +1,12 @@
+se necesita realizar un programa basado en clases que permita automatizar el torniquete (control de acceso)
+de una micro, de la siguiente manera
+
+    1 Las personas que aboradan la micro son, mujeres, hombres, niños y aduto mayor, de los cuales los niños no pagan y lso adultos mayores pagan la tarifa
+      el 50%
+    
+    2 el cobro actual de la micro es de 730 pesos
+
+    3 por lo que necesitamos un reporte de operacion por dia donde, por micro (cada micro se reguistra por patente), se listen los tipos de usuario y la cantidad total recaudad por 
+      cada, anexar a este reporte el total por dia
+
+    4. seria interesante que apart6e del reporte anterior que estotal, tener uno filtrado por dia y otro filtrado por persona
