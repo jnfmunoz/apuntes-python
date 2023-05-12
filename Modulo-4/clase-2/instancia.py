@@ -12,9 +12,9 @@ class Taza:
 class Maquina:
     
     def __init__(self, _tipo_cafe ,_cantidad_agua, _cantidad_cafe):
-        self.tipo_cafe = self._tipo_cafe
-        self.cantidad_agua = self._cantidad_agua
-        self.cantidad_cafe = self._cantidad_cafe
+        self.tipo_cafe = _tipo_cafe
+        self.cantidad_agua = _cantidad_agua
+        self.cantidad_cafe = _cantidad_cafe
 
 class Cafe:
     coffee_types = {
