@@ -1,3 +1,11 @@
+## Autos y Motos, Bicicletas
+## Autos [color, tipo_motor, ruedas, cantidad_puertas, ruedas, tipo_encendido, tipo_freno]
+## Motos [color, tipo_motor, ruedas, tipo_freno, tipo_encendido, tipo_cadena]
+## Bicicletas [color, ruedas, tipo_freno, tipo_manubrio]
+
+## un metodo del padre que lo hereden todos
+## un metdo diferente para cada clase hija
+
 class Vehiculo:
     def __init__(self, _color, _ruedas, _tipo_freno):
         self.color = _color

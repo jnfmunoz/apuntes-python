@@ -11,11 +11,14 @@ dividendo = 100
 while True:
     try:
         edad = int(input("Introduce tu edad: "))
-        calculo = dividendo / edad
-        print(f'el resultado es: {calculo}')
+        result = dividendo / edad
         break
-    except ValueError:
-        print("debes introducir una edad valida")
-    except ZeroDivisionError:
-        print("la edad debe ser mayor a zero")
-
+    except ValueError as error:
+        print("debe de colocar una edad valida")
+        print(type(error))
+        print(error.args)
+        print(error)
+    except ZeroDivisionError as error:
+        print(type(error))
+        print(error.args)
+        print(error)

@@ -16,12 +16,15 @@ print(type(transporte1))
 print(type(bozz1))
 
 class Droid:
-    def switch_on(self):
-        print("hola soy un droid, estoy a tu orden")
-        self.power_on = True
+    def __init__(self):
+        self.power_on = False
 
+    def switch_on(self):
+        print("Hola soy un droid, y estoy a tu orden")
+        self.power_on = True
+    
     def switch_off(self):
-        print("Adios, enciendeme cuando me necesites")
+        print("Adios, enciendeme, cuando me necesites")
         self.power_on = False
 
 k8_arthur = Droid() #Instanciando un objeto
@@ -43,4 +46,3 @@ sedan = Vehicle('Sedan', 'Aveo')
 print(sedan.type_vehicle, sedan.model_vehicle)
 pickup = Vehicle('Pickup', 'Ranger')
 print(pickup.type_vehicle, pickup.model_vehicle)
-
