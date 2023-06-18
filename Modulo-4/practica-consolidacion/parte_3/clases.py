@@ -1,4 +1,5 @@
 import csv
+
 class Vehiculo():
     def __init__(self, _marca, _modelo, _num_ruedas):
         self.marca = _marca
@@ -8,7 +9,7 @@ class Vehiculo():
     def guardar(file_name, Vehiculo):
         file = open(file_name, "a")
         datos = [(Vehiculo.__class__, Vehiculo.__dict__)]
-        csv_file = csv.writer(file)
+        csv_file = csv.writer(file, lineterminator='\n')
         csv_file.writerows(datos)
         file.close()
     
@@ -25,15 +26,12 @@ class Vehiculo():
     def imprimir_por_clase(vehiculos):
         tipos = ["Particular", "Carga", "Bicicleta", "Motocicleta"]
 
-        # for tipo in tipos:
-        #     print(f"\nLista de Vehículos {tipo}: ")
-        #     for vehiculo in vehiculos:
-        #         class_str = vehiculo[0].split("'")[1].rsplit('.', 1)[1]
-        #         if class_str == tipo:
-        #             print(vehiculo[1])
-        for x in tipos:
-            print(f"\nLista de Vehículos {x}: ")
-            
+        for tipo in tipos:
+            print(f"\nLista de Vehículos {tipo}: ")
+            for vehiculo in vehiculos:
+                class_str = vehiculo[0].split("'")[1].rsplit('.', 1)[1]
+                if class_str == tipo:
+                    print(vehiculo[1])    
 
     def __repr__(self) -> str:
         """ Devuelve por defecto el nombre de la clase y la dirección del objeto. """
@@ -88,18 +86,3 @@ class Motocicleta(Bicicleta):
     def __repr__(self) -> str:
         """ Devuelve por defecto el nombre de la clase y la dirección del objeto. """
         return "Motocicleta"
-
-#automovil = Automovil("Ford", "Fiesta", "4", "180", "500")
-particular = Particular("Ford", "Fiesta", "4", "180", "500", "5")
-carga = Carga("Daft Trucks", "G 38", "10", "120", "1000", "20000")
-bicicleta = Bicicleta("Shimano", "MT Ranger", 2, "Carrera")
-motocicleta = Motocicleta("BMW", "F800s",2,"Deportiva","2T","Doble Viga", 21)
-
-#guardar("vehiculos.csv", automovil)
-Vehiculo.guardar("vehiculos.csv", particular)
-Vehiculo.guardar("vehiculos.csv", carga)
-Vehiculo.guardar("vehiculos.csv", bicicleta)
-Vehiculo.guardar("vehiculos.csv", motocicleta)
-
-vehiculos = Vehiculo.recuperar("vehiculos.csv")
-Vehiculo.imprimir_por_clase(vehiculos)
