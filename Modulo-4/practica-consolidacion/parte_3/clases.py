@@ -20,23 +20,33 @@ class Vehiculo():
             raise TypeError("número de ruedas de vehículo debe ser un valor númerico")
         
     def guardar(file_name, Vehiculo):
-        
-        file = open(file_name, "a")
-        datos = [(Vehiculo.__class__, Vehiculo.__dict__)]
-        csv_file = csv.writer(file, lineterminator='\n')
-        csv_file.writerows(datos)
-        file.close()
-    
+
+        try:
+            file = open(file_name, "a")
+            datos = [(Vehiculo.__class__, Vehiculo.__dict__)]
+            csv_file = csv.writer(file, lineterminator='\n')
+            csv_file.writerows(datos)
+            file.close()
+
+        except csv.Error as e:
+            print(f"Error: {e}")
     
     def recuperar(file_name):
         
         vehiculos = []
-        file = open(file_name, "r")
-        file_csv = csv.reader(file)
-        for vehiculo in file_csv:
-            vehiculos.append(vehiculo)
-        file.close()
-        return vehiculos
+
+        try:
+            file = open(file_name, "r")
+            file_csv = csv.reader(file)
+            for vehiculo in file_csv:
+                vehiculos.append(vehiculo)
+            file.close()
+
+        except csv.Error as e:
+            print(f"Error: {e}")
+            
+        else:
+            return vehiculos        
     
     def imprimir_por_clase(vehiculos):
         
